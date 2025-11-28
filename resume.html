@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshit Guleria | Web Dev & QA Tester</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dev: '#06b6d4', // Cyan for Dev
+                        qa: '#22c55e',  // Green for QA
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        card: '#1e293b'
+                    },
+                    fontFamily: {
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+                        sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+        
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+        }
+        
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-darker text-slate-300 font-sans selection:bg-dev selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 left-0 bg-darker/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-mono font-bold text-xl text-white">
+                    <span class="text-dev">&lt;</span>HG<span class="text-dev">/&gt;</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-dev transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#skills" class="hover:text-dev transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#experience" class="hover:text-dev transition-colors px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                        <a href="#contact" class="bg-dev/10 text-dev border border-dev/50 hover:bg-dev hover:text-white transition-all px-4 py-2 rounded-md text-sm font-medium">Contact Me</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-darker border-b border-slate-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="hover:text-dev block px-3 py-2 rounded-md text-base font-medium">Home</a>
+            
+                <a href="#skills" class="hover:text-dev block px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#experience" class="hover:text-dev block px-3 py-2 rounded-md text-base font-medium">Experience</a>
+                <a href="#contact" class="text-dev block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-dev/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-qa/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center gap-12">
+            <!-- Text Content -->
+            <div class="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-xs font-mono text-dev">
+                    <span class="w-2 h-2 rounded-full bg-qa animate-pulse"></span>
+                    <span>Open to Work</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight">
+                    Harshit Guleria
+                </h1>
+                <h2 class="text-xl sm:text-2xl text-slate-400 font-medium">
+                    <span class="text-dev">Web Developer</span> & <span class="text-qa">QA Tester</span>
+                </h2>
+                <p class="text-slate-400 text-lg leading-relaxed max-w-lg mx-auto lg:mx-0">
+                    Bridging the gap between robust code and flawless user experiences. Specialized in building scalable web solutions and ensuring quality through automated testing.
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#contact" class="px-6 py-3 rounded-lg bg-dev text-darker font-bold hover:bg-cyan-400 transition-colors shadow-lg shadow-cyan-500/20">
+                        Get in Touch
+                    </a>
+                    <a href="#experience" class="px-6 py-3 rounded-lg border border-slate-600 hover:border-qa hover:text-qa transition-colors bg-transparent">
+                        View Work
+                    </a>
+                </div>
+                <div class="flex justify-center lg:justify-start gap-6 pt-4 text-slate-400">
+                    <a href="https://linkedin.com/in/harshitguleria619" target="_blank" class="hover:text-white transition-colors text-2xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:harshitguleria08@gmail.com" class="hover:text-white transition-colors text-2xl"><i class="fas fa-envelope"></i></a>
+ 
+                </div>
+            </div>
+
+            <!-- Terminal Visual (Replacing Photo) -->
+            <div class="w-full lg:w-1/2">
+                <div class="bg-[#1e293b] rounded-lg shadow-2xl overflow-hidden border border-slate-700 font-mono text-sm sm:text-base transform transition-transform hover:scale-[1.01] duration-300">
+                    <!-- Terminal Header -->
+                    <div class="bg-slate-800 px-4 py-2 flex items-center justify-between border-b border-slate-700">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="text-slate-400 text-xs">harshit@dev-machine:~/portfolio</div>
+                        <div></div>
+                    </div>
+                    <!-- Terminal Body -->
+                    <div class="p-6 text-slate-300 space-y-4">
+                        <div>
+                            <span class="text-qa">➜</span> <span class="text-dev">~</span> <span class="text-yellow-400">cat</span> profile.json
+                        </div>
+                        <div class="pl-4">
+                            <span class="text-slate-500">{</span><br>
+                            &nbsp;&nbsp;<span class="text-purple-400">"name"</span>: <span class="text-green-400">"Harshit Guleria"</span>,<br>
+                            &nbsp;&nbsp;<span class="text-purple-400">"role"</span>: [<span class="text-green-400">"Developer"</span>, <span class="text-green-400">"QA Tester"</span>],<br>
+                            &nbsp;&nbsp;<span class="text-purple-400">"skills"</span>: {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">"languages"</span>: [<span class="text-green-400">"Python"</span>, <span class="text-green-400">"JavaScript"</span>],<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">"testing"</span>: [<span class="text-green-400">"Playwright"</span>, <span class="text-green-400">"Manual"</span>],<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">"web"</span>: [<span class="text-green-400">"GraphQL"</span>, <span class="text-green-400">"Shopify"</span>]<br>
+                            &nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;<span class="text-purple-400">"status"</span>: <span class="text-green-400">"Ready to deploy"</span><br>
+                            <span class="text-slate-500">}</span>
+                        </div>
+                        <div>
+                            <span class="text-qa">➜</span> <span class="text-dev">~</span> <span class="typing-cursor"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Technical <span class="text-dev">Arsenal</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-dev to-qa mx-auto rounded-full"></div>
+                <p class="mt-4 text-slate-400">Languages, frameworks, and tools I use to build and test.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Development Skills -->
+                <div class="glass-card p-6 rounded-xl hover:border-dev/50 transition-colors group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-dev/10 flex items-center justify-center text-dev mr-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Development</h3>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-slate-400"><i class="fab fa-python w-6 text-yellow-500"></i> Python</li>
+                        <li class="flex items-center text-slate-400"><i class="fab fa-js w-6 text-yellow-300"></i> JavaScript</li>
+                        <li class="flex items-center text-slate-400"><i class="fas fa-database w-6 text-pink-500"></i> GraphQL</li>
+                        <li class="flex items-center text-slate-400"><i class="fab fa-shopify w-6 text-green-500"></i> Shopify CLI & Liquid</li>
+                        <li class="flex items-center text-slate-400"><i class="fas fa-server w-6 text-white"></i> Linux Environments</li>
+                    </ul>
+                </div>
+
+                <!-- QA & Testing Skills -->
+                <div class="glass-card p-6 rounded-xl hover:border-qa/50 transition-colors group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-qa/10 flex items-center justify-center text-qa mr-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">QA & Automation</h3>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-slate-400"><i class="fas fa-robot w-6 text-orange-500"></i> Playwright Framework</li>
+                        <li class="flex items-center text-slate-400"><i class="fas fa-check-double w-6 text-qa"></i> Automated Test Scripts</li>
+                        <li class="flex items-center text-slate-400"><i class="fas fa-bug w-6 text-red-400"></i> Manual Testing</li>
+                        <li class="flex items-center text-slate-400"><i class="fas fa-clipboard-check w-6 text-blue-400"></i> Bug Reporting</li>
+                        <li class="flex items-center text-slate-400"><i class="fas fa-eye w-6 text-indigo-400"></i> UI/UX Verification</li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Workflow -->
+                <div class="glass-card p-6 rounded-xl hover:border-purple-500/50 transition-colors group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 mr-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-toolbox"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Tools</h3>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-slate-400"><i class="fab fa-git-alt w-6 text-orange-600"></i> Git & Version Control</li>
+                        <li class="flex items-center text-slate-400"><i class="fas fa-code-branch w-6 text-blue-500"></i> VS Code</li>
+                        <li class="flex items-center text-slate-400"><i class="fas fa-rocket w-6 text-orange-400"></i> Postman</li>
+                        <li class="flex items-center text-slate-400"><i class="fas fa-palette w-6 text-cyan-400"></i> Canva & GIMP</li>
+                        <li class="flex items-center text-slate-400"><i class="fas fa-tachometer-alt w-6 text-slate-300"></i> Admin Dashboards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-darker relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Professional <span class="text-qa">Experience</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-dev to-qa mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Timeline Item -->
+            <div class="relative pl-8 border-l-2 border-slate-800 space-y-12">
+                <!-- Current Role -->
+                <div class="relative group">
+                    <!-- Dot -->
+                    <div class="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-dev border-4 border-darker group-hover:scale-125 transition-transform"></div>
+                    
+                    <div class="glass-card p-6 rounded-xl border-l-4 border-l-dev">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Intern - Web Dev & QA</h3>
+                                <p class="text-dev font-medium">DJT Corporation & Investments Pvt. Ltd., Noida</p>
+                            </div>
+                            <span class="mt-2 sm:mt-0 px-3 py-1 rounded-full bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Aug 2025 - Present</span>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Project 1: House Of Believe -->
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2 flex items-center">
+                                    <i class="fas fa-shopping-bag text-dev mr-2"></i> E-commerce Platform (House Of Believe)
+                                </h4>
+                                <ul class="list-disc list-inside text-slate-400 space-y-2 ml-1">
+                                    <li>Maintained website infrastructure, resolving critical UI bugs and implementing responsive design changes.</li>
+                                    <li>Optimized <strong>GraphQL queries</strong> to streamline data flow between the frontend and admin dashboard.</li>
+                                    <li>Conducted rigorous manual testing to ensure a seamless user experience across devices.</li>
+                                    <li>Collaborated with app developers to synchronize UI updates across web and mobile platforms.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Project 2: Pharmville -->
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2 flex items-center">
+                                    <i class="fas fa-pills text-qa mr-2"></i> QA/Testing (Pharmville)
+                                </h4>
+                                <ul class="list-disc list-inside text-slate-400 space-y-2 ml-1">
+                                    <li>Performed comprehensive manual testing of Pharmville.in to identify functional and visual regressions.</li>
+                                    <li>Developed <strong>automated test scripts using Playwright (Python)</strong>, significantly reducing regression testing time.</li>
+                                    <li>Documented detailed bug reports with reproduction steps, facilitating faster resolution by developers.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-dark">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">Education</h2>
+            
+            <div class="grid gap-6">
+                <!-- B.Tech -->
+                <div class="glass-card p-6 rounded-xl flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="text-xl font-bold text-white">B.Tech in Computer Engineering</h3>
+                        <p class="text-slate-400">The Technological Institute of Textile and Sciences, Bhiwani</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-dev font-mono font-bold text-lg">77%</p>
+                        <p class="text-slate-500 text-sm">2022 - 2025</p>
+                    </div>
+                </div>
+
+                <!-- B.Sc -->
+                <div class="glass-card p-6 rounded-xl flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="text-lg font-bold text-white">B.Sc in Physics</h3>
+                        <p class="text-slate-400">Wazir Ram Singh Govt. Post Graduate College, Dehri</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-qa font-mono font-bold text-lg">CGPA: 6.70</p>
+                        <p class="text-slate-500 text-sm">2018 - 2021</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Interests -->
+    <section class="py-20 bg-darker border-y border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-white mb-8">Beyond Coding</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-4 py-2 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+                    <i class="fas fa-theater-masks mr-2 text-pink-500"></i> Dramatics Society
+                </span>
+                <span class="px-4 py-2 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+                    <i class="fas fa-running mr-2 text-green-500"></i> Sports
+                </span>
+                <span class="px-4 py-2 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+                    <i class="fas fa-mobile-alt mr-2 text-blue-500"></i> Custom Smartphone ROMs
+                </span>
+                <span class="px-4 py-2 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+                    <i class="fas fa-users mr-2 text-yellow-500"></i> Cultural Secretary
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-dev/5 mask-gradient"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="glass-card rounded-2xl p-8 md:p-12 text-center border-t border-dev/20">
+                <h2 class="text-3xl font-bold text-white mb-6">Let's Connect</h2>
+                <p class="text-slate-400 mb-8 max-w-xl mx-auto">
+                    I'm currently looking for full-time opportunities in Web Development and QA Automation. 
+                    If you have a role that matches my skills, let's chat.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <a href="mailto:harshitguleria08@gmail.com" class="p-4 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors group">
+                        <i class="fas fa-envelope text-2xl text-dev mb-2 group-hover:scale-110 transition-transform block"></i>
+                        <span class="text-sm text-slate-300">harshitguleria08@gmail.com</span>
+                    </a>
+                    <a href="tel:+916280081970" class="p-4 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors group">
+                        <i class="fas fa-phone text-2xl text-qa mb-2 group-hover:scale-110 transition-transform block"></i>
+                        <span class="text-sm text-slate-300">+91-62800-81970</span>
+                    </a>
+                    <a href="https://linkedin.com/in/harshitguleria619" target="_blank" class="p-4 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors group">
+                        <i class="fab fa-linkedin text-2xl text-blue-500 mb-2 group-hover:scale-110 transition-transform block"></i>
+                        <span class="text-sm text-slate-300">LinkedIn Profile</span>
+                    </a>
+                </div>
+
+                <div class="text-slate-500 text-sm">
+                    © 2025 Harshit Guleria. Built with Code & Quality.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple typing effect cursor blink is handled by CSS animation
+    </script>
+</body>
+</html>
